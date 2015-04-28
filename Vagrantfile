@@ -25,7 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then
   # config.vm.box_url doesn't need to be specified.
-  config.vm.box = 'ubuntu/trusty64'
+  # config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'nrel/CentOS-6.5-x86_64'
 
 
   # Assign this VM to a host-only network IP, allowing you to access it
@@ -42,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "../data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -75,13 +76,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
-    chef.json = {
-      mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
-      }
-    }
+#    chef.json = {
+#      mysql: {
+#        server_root_password: 'rootpass',
+#        server_debian_password: 'debpass',
+#        server_repl_password: 'replpass',
+#        version: '5.5',
+#        port: '3306',
+#        data_dir: '/data-mysql',
+#        allow_remote_root: true,
+#        remove_anonymous_users: true,
+#        remove_test_database: true
+#      }
+#    }
 
     chef.run_list = [
       'recipe[newdev::default]'
