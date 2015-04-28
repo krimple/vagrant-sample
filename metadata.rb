@@ -6,6 +6,9 @@ description      'Installs/Configures .'
 long_description 'Installs/Configures .'
 version          '0.1.0'
 
-
 depends 'mysql', '~> 6.0'
 depends 'nodejs'
+depends 'build-essential'
+depends 'user'
+#depends 'git'
+#depends 'vim_setup'

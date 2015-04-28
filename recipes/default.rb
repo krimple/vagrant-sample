@@ -17,4 +17,12 @@ mysql_service 'default' do
   action [:create, :start]
 end
 
+#include_recipe "git"
+
 include_recipe "nodejs"
+
+include_recipe "build-essential"
+
+#include_recipe "vim_setup"
+
+
