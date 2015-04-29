@@ -1,42 +1,31 @@
 # .-cookbook
 
-TODO: Enter the cookbook description here.
+This cookbook is a learning sample for me as I play with Vagrant, Chef, Berkshelf to set up a cross-OS virtual machine in Virtualbox to use between my Macbook Pro and my Surface Pro 3.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Windows, OS X (perhaps Linux)
 
 ## Attributes
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['.']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+None. A beginner's recipe.
 
 ## Usage
 
 ### .::default
 
+TODO - unsure about what to put here since I also have usersetup.rb.
 Include `.` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[.::default]"
+    "recipe[.::default]",
+    "recipe[.::usersetup]"
   ]
 }
 ```
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: Ken Rimple (krimple@chariotsolutions.com)
